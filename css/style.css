@@ -1738,3 +1738,36 @@ body {
         bottom: 70px;
     }
 }
+
+/* ===== Price Tag ===== */
+.price-tag {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin: 20px 0;
+}
+
+.price-tag::before {
+    content: '¥';
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.delivery-time {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+    .ai-chat-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+    
+    .ai-chat-window {
+        width: calc(100vw - 32px);
+        height: calc(100vh - 100px);
+        bottom: 70px;
+    }
+}
