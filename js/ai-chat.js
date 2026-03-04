@@ -7,7 +7,7 @@
 const AI_CONFIG = {
     // MiniMax API 配置
     apiKey: 'sk-cp-xeHyOKMxDaVLVHlirjKRLT6h2ptVhO3CRkBH6aDEpHe01DW9I40w--rXlEpIOzZu6GygeS1dFNthaiL3PhFUplxKHiRhf1YEh9NpVcrZ_7NYQasfegZpU2E',
-    apiUrl: 'https://api.minimax.chat/v1/text/chatcompletion_pro',
+    apiUrl: 'https://api.minimax.chat/v1/text/chatcompletion_v2',
     model: 'abab6.5s-chat',
     
     // 系统提示词 - 流云智炬产品知识库
