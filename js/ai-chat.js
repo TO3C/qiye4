@@ -71,11 +71,19 @@ async function sendMessage() {
     chatSend.disabled = true;
     showTyping();
     
-    try {
+    } catch (error) {
+        removeTyping();
+        addMessage('抱歉，服务暂时不可用。请稍后再试。', 'ai');
+        console.error('AI Error:', error);
+    }
         const response = await callAI(message);
         removeTyping();
         addMessage(response, 'ai');
     } catch (error) {
+        removeTyping();
+        addMessage('抱歉，服务暂时不可用（CORS跨域限制）。您可以联系我们获取更多帮助。', 'ai');
+        console.error('AI Error:', error);
+    }
         removeTyping();
         addMessage('抱歉，服务暂时不可用。请稍后再试。', 'ai');
     }
