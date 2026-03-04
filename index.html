@@ -10,11 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Background Effects -->
     <div class="ambient-light"></div>
     <div class="noise-overlay"></div>
     
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -31,31 +29,20 @@
             <div class="nav-menu-wrapper">
                 <ul class="nav-menu">
                     <li><a href="#services" class="nav-link">服务套餐</a></li>
-                    <li><a href="#cases" class="nav-link">客户案例</a></li>
+                    <li><a href="#custom" class="nav-link">定制服务</a></li>
                     <li><a href="#faq" class="nav-link">常见问题</a></li>
                     <li><a href="#contact" class="nav-link">联系我们</a></li>
                 </ul>
             </div>
             
             <div class="nav-actions">
-                <button class="nav-lang">中 / EN</button>
-                <button class="nav-cta">
+                <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                     <span>立即咨询</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
                 </button>
             </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
             <div class="gradient-orb orb-1"></div>
@@ -63,412 +50,175 @@
             <div class="grid-lines"></div>
         </div>
         
-        <div class="hero-content">
-            <div class="hero-badge">
-                <div class="badge-pulse"></div>
-                <span>海南自贸港企业服务</span>
-            </div>
-            
-            <h1 class="hero-title">
-                <span class="title-line">专业网站设计</span>
-                <span class="title-line gradient-text">助力企业数字化转型</span>
-            </h1>
-            
-            <p class="hero-subtitle">
-                专注于为海南企业提供原创网站设计、SEO优化、小程序开发等数字化服务。已服务200+企业客户，交付成功率100%。
-            </p>
-            
-            <div class="hero-metrics">
-                <div class="metric-item">
-                    <div class="metric-value">
-                        <span class="counter" data-target="200">0</span>+
-                    </div>
-                    <div class="metric-label">企业客户</div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>海南自贸港企业服务</span>
                 </div>
-                <div class="metric-divider"></div>
-                <div class="metric-item">
-                    <div class="metric-value">
-                        <span class="counter" data-target="100">0</span>%
+                
+                <h1 class="hero-title">
+                    <span class="title-line">专业网站设计</span>
+                    <span class="title-line gradient-text">助力企业数字化转型</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    专注于为海南企业提供原创网站设计、SEO优化、小程序开发等数字化服务。已服务200+企业客户，交付成功率100%。
+                </p>
+                
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value"><span class="counter" data-target="200">0</span>+</div>
+                        <div class="metric-label">企业客户</div>
                     </div>
-                    <div class="metric-label">交付成功率</div>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric-item">
-                    <div class="metric-value">
-                        <span class="counter" data-target="2">0</span>h
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <div class="metric-value"><span class="counter" data-target="100">0</span>%</div>
+                        <div class="metric-label">交付成功</div>
                     </div>
-                    <div class="metric-label">售后响应</div>
-                </div>
-            </div>
-            
-            <div class="hero-ctas">
-                <button class="btn btn-primary btn-glow" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
-                    <span>查看套餐</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M3 5C3 3.89543 3.89543 3 5 3H15C16.1046 3 17 3.89543 17 5V15C17 16.1046 16.1046 17 15 17H5C3.89543 17 3 16.1046 3 15V5Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M3 7L8 11L14 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>在线咨询</span>
-                </button>
-            </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="dashboard-preview">
-                <div class="dashboard-glow"></div>
-                <div class="dashboard-screen">
-                    <div class="screen-header">
-                        <div class="screen-title">流云智炬 - 企业官网</div>
-                        <div class="screen-status">
-                            <span class="status-dot"></span>
-                            运行正常
-                        </div>
-                    </div>
-                    <div class="screen-content">
-                        <div class="chart-area">
-                            <div class="chart-line"></div>
-                            <div class="chart-points">
-                                <div class="point"></div>
-                                <div class="point"></div>
-                                <div class="point active"></div>
-                                <div class="point"></div>
-                            </div>
-                        </div>
-                        <div class="stats-row">
-                            <div class="stat-box">
-                                <div class="stat-label-sm">本月询盘</div>
-                                <div class="stat-bar">
-                                    <div class="stat-fill" style="width: 78%"></div>
-                                </div>
-                                <div class="stat-value-sm">156</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-label-sm">SEO排名</div>
-                                <div class="stat-bar">
-                                    <div class="stat-fill" style="width: 92%"></div>
-                                </div>
-                                <div class="stat-value-sm">TOP 3</div>
-                            </div>
-                        </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <div class="metric-value"><span class="counter" data-target="2">0</span>h</div>
+                        <div class="metric-label">售后响应</div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="floating-cards">
-                <div class="float-card card-1">
-                    <div class="card-icon">🎯</div>
-                    <div class="card-text">
-                        <div class="card-value">SEO</div>
-                        <div class="card-label">优化排名</div>
-                    </div>
-                </div>
-                <div class="float-card card-2">
-                    <div class="card-icon">📱</div>
-                    <div class="card-text">
-                        <div class="card-value">小程序</div>
-                        <div class="card-label">开发定制</div>
-                    </div>
+                
+                <div class="hero-ctas">
+                    <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                        <span>查看套餐</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="toggleAiChat()">
+                        <span>在线咨询</span>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Banner -->
     <section class="trust-banner">
         <div class="container">
-            <p class="trust-label">为什么选择我们</p>
             <div class="trust-logos">
                 <div class="trust-logo">原创设计</div>
                 <div class="trust-logo">SEO优化</div>
                 <div class="trust-logo">快速交付</div>
                 <div class="trust-logo">本地服务</div>
                 <div class="trust-logo">售后响应</div>
-                <div class="trust-logo">品质保证</div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="solutions" id="services">
         <div class="container">
             <header class="section-header">
                 <div class="section-tag">服务套餐</div>
                 <h2 class="section-title">选择适合您的方案</h2>
-                <p class="section-desc">透明定价，无隐形费用，让每一分钱都花在刀刃上</p>
             </header>
             
             <div class="solutions-grid">
                 <div class="solution-card">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <div class="card-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                    <path d="M16 16L28 10M16 16V28M16 16L4 10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <span class="card-tag">入门首选</span>
-                        </div>
-                        <h3 class="card-title">初创公司速启版</h3>
-                        <p class="card-desc">海南新注册公司，需要快速上线官网？3-5天快速交付，让您的企业快速触达客户。</p>
-                        <div class="price-tag">¥3,800</div>
-                        <ul class="card-features">
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>公司简介页 1页</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>产品/服务页 2页</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>联系我们页 1页</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>移动端适配</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>域名+服务器 1年</span>
-                            </li>
-                        </ul>
-                        <p class="delivery-time">交付周期：3-5个工作日</p>
-                        <a href="#contact" class="card-link">
-                            <span>立即咨询</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+                    <div class="card-header">
+                        <span class="card-tag">入门首选</span>
                     </div>
+                    <h3 class="card-title">初创速启版</h3>
+                    <p class="card-desc">海南新注册公司，需要快速上线官网？3-5天快速交付。</p>
+                    <div class="price-tag">¥3,800</div>
+                    <ul class="card-features">
+                        <li><span>公司简介页 1页</span></li>
+                        <li><span>产品/服务页 2页</span></li>
+                        <li><span>联系我们页 1页</span></li>
+                        <li><span>移动端适配</span></li>
+                        <li><span>域名+服务器 1年</span></li>
+                    </ul>
+                    <p class="delivery-time">交付：3-5个工作日</p>
                 </div>
                 
                 <div class="solution-card featured">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <div class="card-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <span class="card-tag">最热销</span>
-                        </div>
-                        <h3 class="card-title">品牌升级版</h3>
-                        <p class="card-desc">有一定规模，需要品牌形象升级？后台管理+SEO优化，让您的品牌更具竞争力。</p>
-                        <div class="price-tag">¥6,800</div>
-                        <ul class="card-features">
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>首页+关于我们</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>产品/服务 3页</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>案例展示+新闻动态</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>后台管理系统</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>SEO基础优化</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span><strong>赠送AI客服机器人</strong></span>
-                            </li>
-                        </ul>
-                        <p class="delivery-time">交付周期：7-10个工作日</p>
-                        <a href="#contact" class="card-link">
-                            <span>立即咨询</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+                    <div class="card-header">
+                        <span class="card-tag">最热销</span>
                     </div>
+                    <h3 class="card-title">品牌升级版</h3>
+                    <p class="card-desc">品牌形象升级，后台管理+SEO优化，让品牌更具竞争力。</p>
+                    <div class="price-tag">¥6,800</div>
+                    <ul class="card-features">
+                        <li><span>首页+关于我们</span></li>
+                        <li><span>产品/服务 3页</span></li>
+                        <li><span>案例展示+新闻动态</span></li>
+                        <li><span>后台管理系统</span></li>
+                        <li><span>SEO基础优化</span></li>
+                        <li><span>赠送AI客服机器人</span></li>
+                    </ul>
+                    <p class="delivery-time">交付：7-10个工作日</p>
                 </div>
                 
                 <div class="solution-card">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <div class="card-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M4 12H28M10 6V26" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <span class="card-tag">高端定制</span>
-                        </div>
-                        <h3 class="card-title">集团形象版</h3>
-                        <p class="card-desc">集团公司、资本平台、外资企业？高端双语设计，8-12页多级栏目，彰显品牌实力。</p>
-                        <div class="price-tag">¥12,800</div>
-                        <ul class="card-features">
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>高端首页设计</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>多级栏目 8-12页</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>中英文双语</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>新闻发布系统</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>SEO深度优化</span>
-                            </li>
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8L6.5 11.5L13 5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>高性能服务器 2年</span>
-                            </li>
-                        </ul>
-                        <p class="delivery-time">交付周期：15-20个工作日</p>
-                        <a href="#contact" class="card-link">
-                            <span>立即咨询</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+                    <div class="card-header">
+                        <span class="card-tag">高端定制</span>
                     </div>
+                    <h3 class="card-title">集团形象版</h3>
+                    <p class="card-desc">高端双语设计，8-12页多栏目，彰显品牌实力。</p>
+                    <div class="price-tag">¥12,800</div>
+                    <ul class="card-features">
+                        <li><span>高端首页设计</span></li>
+                        <li><span>多级栏目 8-12页</span></li>
+                        <li><span>中英文双语</span></li>
+                        <li><span>新闻发布系统</span></li>
+                        <li><span>SEO深度优化</span></li>
+                        <li><span>高性能服务器 2年</span></li>
+                    </ul>
+                    <p class="delivery-time">交付：15-20个工作日</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Custom Services -->
-    <section class="platform" id="custom">
+    <section class="custom-services" id="custom">
         <div class="container">
-            <div class="platform-grid">
-                <div class="platform-content">
-                    <div class="section-tag">定制服务</div>
-                    <h2 class="section-title">按需定制<br>灵活选择</h2>
-                    <p class="platform-desc">根据您的业务需求，提供个性化的技术解决方案，让您的网站更具竞争力。</p>
-                    
-                    <div class="tech-specs">
-                        <div class="spec-item">
-                            <div class="spec-icon">🌐</div>
-                            <div class="spec-content">
-                                <div class="spec-title">多语言版本</div>
-                                <div class="spec-desc">英语/日语/俄语等 +¥3,000~8,000/语种</div>
-                            </div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">🛒</div>
-                            <div class="spec-content">
-                                <div class="spec-title">电商功能</div>
-                                <div class="spec-desc">商城系统 +¥8,000~20,000</div>
-                            </div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">👥</div>
-                            <div class="spec-content">
-                                <div class="spec-title">会员系统</div>
-                                <div class="spec-desc">用户管理 +¥5,000~15,000</div>
-                            </div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-icon">📱</div>
-                            <div class="spec-content">
-                                <div class="spec-title">小程序对接</div>
-                                <div class="spec-desc">微信/支付宝小程序 +¥3,000~8,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                        <span>咨询定制方案</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+            <header class="section-header">
+                <div class="section-tag">定制服务</div>
+                <h2 class="section-title">按需定制 灵活选择</h2>
+                <p class="section-desc">根据您的业务需求，提供个性化的技术解决方案</p>
+            </header>
+            
+            <div class="custom-grid">
+                <div class="custom-card">
+                    <div class="custom-icon">🌐</div>
+                    <h3>多语言版本</h3>
+                    <p class="custom-price">+¥3,000~8,000/语种</p>
                 </div>
-                
-                <div class="platform-visual">
-                    <div class="architecture-diagram">
-                        <div class="layer layer-app">
-                            <div class="layer-label">增值服务</div>
-                            <div class="layer-items">
-                                <span class="layer-item">公众号搭建</span>
-                                <span class="layer-item">营销文案</span>
-                                <span class="layer-item">SEO优化</span>
-                            </div>
-                        </div>
-                        <div class="layer-connector"></div>
-                        <div class="layer layer-platform">
-                            <div class="layer-label">技术开发</div>
-                            <div class="layer-items">
-                                <span class="layer-item">网站开发</span>
-                                <span class="layer-item">小程序</span>
-                                <span class="layer-item">商城系统</span>
-                            </div>
-                        </div>
-                        <div class="layer-connector"></div>
-                        <div class="layer layer-infra">
-                            <div class="layer-label">维护服务</div>
-                            <div class="layer-items">
-                                <span class="layer-item">基础维护</span>
-                                <span class="layer-item">高级维护</span>
-                                <span class="layer-item">技术支持</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="custom-card">
+                    <div class="custom-icon">🛒</div>
+                    <h3>电商功能</h3>
+                    <p class="custom-price">¥8,000~20,000</p>
                 </div>
+                <div class="custom-card">
+                    <div class="custom-icon">👥</div>
+                    <h3>会员系统</h3>
+                    <p class="custom-price">¥5,000~15,000</p>
+                </div>
+                <div class="custom-card">
+                    <div class="custom-icon">📱</div>
+                    <h3>小程序对接</h3>
+                    <p class="custom-price">¥3,000~8,000</p>
+                </div>
+                <div class="custom-card">
+                    <div class="custom-icon">🎬</div>
+                    <h3>视频制作</h3>
+                    <p class="custom-price">¥2,000~5,000/个</p>
+                </div>
+                <div class="custom-card">
+                    <div class="custom-icon">🛠️</div>
+                    <h3>年度维护</h3>
+                    <p class="custom-price">¥2,400~6,000/年</p>
+                </div>
+            </div>
+            
+            <div class="custom-cta">
+                <button class="btn btn-primary btn-glow" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    <span>咨询定制方案</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="cases" id="faq">
         <div class="container">
             <header class="section-header">
@@ -476,41 +226,23 @@
                 <h2 class="section-title">您关心的问题</h2>
             </header>
             
-            <div class="cases-showcase">
-                <div class="case-card case-featured">
-                    <div class="case-bg"></div>
-                    <div class="case-content">
-                        <div class="case-meta">
-                            <span class="case-industry">常见问题</span>
-                            <span class="case-badge">必看</span>
-                        </div>
-                        <h3 class="case-title">Q：为什么你们比淘宝贵？</h3>
-                        <p class="case-desc">淘宝模板站：套用现成模板，无设计感，无售后。我们的优势：原创设计定制、SEO优化帮你获客、售后响应快（工作日2小时内）、海南本地服务沟通方便。</p>
-                    </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Q：为什么你们比淘宝贵？</h3>
+                    <p>淘宝模板站：套用现成模板，无设计感，无售后。我们的优势：原创设计定制、SEO优化帮你获客、售后响应快（工作日2小时内）、海南本地服务沟通方便。</p>
                 </div>
-                
-                <div class="cases-grid">
-                    <div class="case-card">
-                        <div class="case-meta">
-                            <span class="case-industry">常见问题</span>
-                        </div>
-                        <h3 class="case-title">Q：做网站要多久？</h3>
-                        <p class="case-desc">初创版：3-5个工作日；品牌版：7-10个工作日；集团版：15-20个工作日。加急可协商（加收30%）。</p>
-                    </div>
-                    
-                    <div class="case-card">
-                        <div class="case-meta">
-                            <span class="case-industry">常见问题</span>
-                        </div>
-                        <h3 class="case-title">Q：你们负责推广吗？</h3>
-                        <p class="case-desc">我们负责网站技术端的SEO优化。推广投放（如百度竞价、信息流）可额外合作，我们有合作渠道可以一起打包。</p>
-                    </div>
+                <div class="faq-card">
+                    <h3>Q：做网站要多久？</h3>
+                    <p>初创版：3-5个工作日；品牌版：7-10个工作日；集团版：15-20个工作日。加急可协商（加收30%）。</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Q：你们负责推广吗？</h3>
+                    <p>我们负责网站技术端的SEO优化。推广投放（如百度竞价，信息流）可额外合作，我们有合作渠道可以一起打包。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-content">
@@ -518,34 +250,29 @@
                 <p class="cta-desc">联系我们的解决方案专家，获取免费咨询与报价</p>
                 
                 <div class="cta-options">
-                    <div class="cta-card">
-                        <div class="cta-icon">📞</div>
-                        <h3>电话咨询</h3>
-                        <p>工作日 9:00-18:00</p>
-                        <div class="cta-phone">点击右侧咨询</div>
-                        <button class="btn btn-outline" onclick="document.getElementById('chatWidget').classList.add('active')">在线咨询</button>
+                    <div class="cta-card" onclick="toggleAiChat()">
+                        <div class="cta-icon">💬</div>
+                        <h3>在线咨询</h3>
+                        <p>AI客服24小时在线</p>
                     </div>
                     
                     <div class="cta-card cta-highlight">
-                        <div class="cta-icon">💬</div>
-                        <h3>在线留言</h3>
-                        <p>立即获取报价方案</p>
-                        <button class="btn btn-primary btn-glow" id="openChatBtn">开始对话</button>
+                        <div class="cta-icon">📞</div>
+                        <h3>电话咨询</h3>
+                        <p>工作日 9:00-18:00</p>
+                        <div class="cta-phone">点击咨询</div>
                     </div>
                     
                     <div class="cta-card">
                         <div class="cta-icon">📍</div>
                         <h3>实地考察</h3>
-                        <p>欢迎来访交流</p>
-                        <div class="cta-phone">海南省三亚市</div>
-                        <button class="btn btn-outline">查看地图</button>
+                        <p>海南省三亚市</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-main">
@@ -555,16 +282,9 @@
                             <div class="logo-ring"></div>
                             <div class="logo-core"></div>
                         </div>
-                        <div class="logo-text">
-                            <span class="logo-main">流云智炬</span>
-                        </div>
+                        <span class="logo-main">流云智炬</span>
                     </div>
-                    <p class="footer-desc">专注于海南自贸港企业数字化服务<br>让每一家企业都能拥有专业的网络形象</p>
-                    <div class="footer-certs">
-                        <span class="cert-badge">原创设计</span>
-                        <span class="cert-badge">SEO优化</span>
-                        <span class="cert-badge">本地服务</span>
-                    </div>
+                    <p class="footer-desc">专注于海南自贸港企业数字化服务</p>
                 </div>
                 
                 <div class="footer-links-group">
@@ -574,114 +294,58 @@
                             <li><a href="#services">初创速启版</a></li>
                             <li><a href="#services">品牌升级版</a></li>
                             <li><a href="#services">集团形象版</a></li>
-                            <li><a href="#custom">定制服务</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>增值服务</h4>
+                        <h4>定制服务</h4>
                         <ul>
-                            <li><a href="#">公众号搭建</a></li>
-                            <li><a href="#">营销文案</a></li>
-                            <li><a href="#">SEO优化</a></li>
-                            <li><a href="#">小程序开发</a></li>
+                            <li><a href="#custom">小程序开发</a></li>
+                            <li><a href="#custom">电商系统</a></li>
+                            <li><a href="#custom">SEO优化</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>关于我们</h4>
                         <ul>
-                            <li><a href="#">公司介绍</a></li>
-                            <li><a href="#cases">客户案例</a></li>
                             <li><a href="#faq">常见问题</a></li>
                             <li><a href="#contact">联系我们</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>更多</h4>
-                        <ul>
-                            <li><a href="#">服务条款</a></li>
-                            <li><a href="#">隐私政策</a></li>
-                            <li><a href="#">网站地图</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2026 流云智炬. All rights reserved.</p>
-                </div>
-                <div class="footer-legal">
-                    <a href="#">隐私政策</a>
-                    <a href="#">服务条款</a>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link">WeChat</a>
-                    <a href="#" class="social-link">Weibo</a>
-                </div>
+                <p>&copy; 2026 流云智炬. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- AI Chat Widget -->
     <div class="ai-chat-widget" id="aiChatWidget">
-        <button class="ai-chat-toggle" id="aiChatToggle">
+        <button class="ai-chat-toggle" id="aiChatToggle" onclick="toggleAiChat()">
             <svg class="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2"/>
             </svg>
             <span class="ai-badge">AI</span>
         </button>
         
         <div class="ai-chat-window" id="aiChatWindow">
             <div class="chat-header">
-                <div class="chat-header-info">
-                    <div class="chat-avatar">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="chat-title">流云智炬 智能顾问</div>
-                        <div class="chat-status">在线</div>
-                    </div>
-                </div>
-                <button class="chat-clear" id="chatClear" title="清空对话">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+                <div class="chat-title">流云智炬 智能顾问</div>
+                <button class="chat-clear" onclick="clearChat()">✕</button>
             </div>
             
             <div class="chat-messages" id="chatMessages">
                 <div class="message message-ai">
-                    <div class="message-avatar">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
                     <div class="message-content">
-                        <p>您好！我是流云智炬智能顾问，可以为您解答关于网站设计、小程序开发等服务的问题。</p>
-                        <p style="margin-top: 10px;">您可以问我：</p>
-                        <ul style="margin-top: 5px; margin-left: 15px;">
-                            <li>你们有哪些服务套餐？</li>
-                            <li>建一个网站要多少钱？</li>
-                            <li>做网站需要多长时间？</li>
-                            <li>你们负责SEO优化吗？</li>
-                            <li>海南本地有哪些客户案例？</li>
-                        </ul>
+                        <p>您好！我是流云智炬智能顾问，请问有什么可以帮您？</p>
                     </div>
                 </div>
             </div>
             
             <div class="chat-input-area">
-                <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题..." autocomplete="off">
-                <button class="chat-send" id="chatSend">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+                <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                <button class="chat-send" id="chatSend" onclick="sendMessage()">➤</button>
             </div>
         </div>
     </div>
