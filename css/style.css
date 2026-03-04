@@ -742,6 +742,10 @@ body {
 
 .solutions-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
@@ -751,7 +755,7 @@ body {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 40px;
+    padding: 24px;
     transition: all 0.4s;
     overflow: hidden;
 }
@@ -763,6 +767,9 @@ body {
 }
 
 .solution-card.featured {
+    grid-column: span 1;
+    display: block;
+}
     grid-column: span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -814,6 +821,11 @@ body {
 }
 
 .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
     font-size: 26px;
     font-weight: 700;
     color: var(--text-primary);
@@ -821,6 +833,11 @@ body {
 }
 
 .card-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.7;
@@ -1307,6 +1324,8 @@ body {
     }
     
     .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
         grid-template-columns: 1fr;
     }
     
