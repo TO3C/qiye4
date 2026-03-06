@@ -1,138 +1,105 @@
 const KNOWLEDGE_BASE = {
-    '套餐': `📦 **服务套餐**
-
-💰 初创速启版 ¥3,800（3-5天）
-💰 品牌升级版 ¥6,800（7-10天）🔥热销
-💰 集团形象版 ¥12,800（15-20天）
-
-回复"价格"了解详细报价`,
-
-    '价格': `💰 **价格一览**
-
-初创版 ¥3,800 | 品牌版 ¥6,800 | 集团版 ¥12,800
-
-📱 定制服务：小程序¥3,000起、电商¥8,000起
-
-📞 联系：296077990@qq.com`,
-
-    '多少钱': `💰 网站价格：¥3,800 起
-
-- 初创版 ¥3,800
-- 品牌版 ¥6,800  
-- 集团版 ¥12,800
-
-详情回复"套餐"`,
-
-    '做网站': `🕐 **制作周期**
-
-初创版：3-5天
-品牌版：7-10天
-集团版：15-20天
-
-加急可协商`,
-
-    '多久': `⏱️ 制作周期：
-
-初创版 3-5天
-品牌版 7-10天
-集团版 15-20天
-
-回复"套餐"看详情`,
-
-    '淘宝': `❓ **为什么贵？**
-
-✅ 原创设计（非模板）
-✅ SEO优化帮获客
-✅ 2小时售后响应
-✅ 海南本地服务
-
-一分价钱一分货！`,
-
-    '推广': `📣 **关于推广**
-
-✅ 网站SEO优化（免费）
-✅ 百度竞价、信息流（付费）
-
-需推广可回复"联系"`,
-
-    '小程序': `📱 **小程序开发**
-
-微信/支付宝：¥3,000起
-
-签约品牌版送小程序
-
-回复"套餐"了解`,
-
-    'SEO': `🔍 **SEO服务**
-
-✅ 基础SEO（免费）
-✅ 深度优化付费
-
-提升排名，回复"联系"`,
-
-    '售后': `🛡️ **售后服务**
-
-✅ 2小时响应
-✅ 1个月免费维护
-✅ 续费¥2,400/年`,
-
-    '海南': `📍 **关于我们**
-
-📍 海南省三亚市
-📞 工作日 9:00-18:00
-✅ 200+企业客户
-
-本地服务更方便！`,
-
-    '公司': `🏢 **流云智炬**
-
-🌐 网站设计 | 📱 小程序
-🔍 SEO优化 | 📣 营销推广
-
-📍 三亚 | ✅ 200+客户`,
-
-    '联系': `📞 **联系我们**
-
-📧 邮箱：296077990@qq.com
-📍 地址：海南省三亚市
-⏰ 工作日 9:00-18:00
-
-点击右下角在线咨询~`,
-
-    '流程': `🔄 **合作流程**
-
-1️⃣ 需求沟通
-2️⃣ 合同签订
-3️⃣ 设计开发
-4️⃣ 测试上线
-5️⃣ 售后支持`,
-
-    '优势': `⭐ **选择我们**
-
-🚀 快速交付
-💎 品质保证
-🤝 贴心服务
-💰 合理价格`,
-
-    'hello': `👋 您好！我是流云智炬AI助手
-
-请问有什么可以帮您？
-💰 价格 | 📦 套餐 | 📞 联系`,
-
-    '你好': `👋 您好！
-
-💰 价格 | 📦 套餐 | 📞 联系
-直接点击下方按钮~`,
-
-    '谢谢': `😊 不客气！有问题随时问我~`,
-
-    '再见': `👋 再见！祝您生活愉快！`,
-    
-    '默认': `😊 您好！我是流云智炬AI助手
-
-💰 价格 | 📦 套餐 | 📞 联系 | 🔄 流程
-直接点击下方按钮或输入问题~`
+    '套餐': [
+        '📦 初创版 ¥3,800（3-5天）\n💰 品牌版 ¥6,800（7-10天）🔥\n💰 集团版 ¥12,800（15-20天）\n\n回复"价格"看详细',
+    ],
+    '价格': [
+        '💰 初创3,800 | 品牌6,800 | 集团12,800\n📱 小程序3,000起 | 电商8,000起\n📧 296077990@qq.com',
+    ],
+    '多少钱': [
+        '💰 网站 ¥3,800 起\n根据需求定制，免费咨询',
+    ],
+    '做网站': [
+        '🕐 初创3-5天，品牌7-10天，集团15-20天\n加急可协商~',
+    ],
+    '多久': [
+        '⏱️ 初创3-5天 | 品牌7-10天 | 集团15-20天',
+    ],
+    '淘宝': [
+        '✅ 原创设计 | ✅ SEO优化\n✅ 2小时售后 | ✅ 海南本地\n专业服务，值得信赖！',
+    ],
+    '推广': [
+        '📣 网站SEO免费\n付费推广可合作，回复"联系"详谈',
+    ],
+    '小程序': [
+        '📱 微信/支付宝小程序 ¥3,000起\n品牌版赠送小程序',
+    ],
+    'SEO': [
+        '🔍 基础SEO免费送\n深度优化需付费，提升排名有效',
+    ],
+    '售后': [
+        '🛡️ 2小时响应 | 1个月免费维护\n续费¥2,400/年',
+    ],
+    '海南': [
+        '📍 海南三亚\n📞 工作日9-18点\n服务200+企业',
+    ],
+    '公司': [
+        '🏢 流云智炬科技\n🌐 网站 | 📱 小程序 | 🔍 SEO\n📍 海南三亚 | 200+客户',
+    ],
+    '联系': [
+        '📧 296077990@qq.com\n📍 海南三亚\n💬 点击在线咨询',
+    ],
+    '流程': [
+        '🔄 需求→签约→开发→上线→售后\n5步完成，欢迎咨询~',
+    ],
+    '优势': [
+        '⭐ 快速响应 | 原创设计\n⭐ 2小时售后 | 合理价格',
+    ],
+    'hello': ['👋 您好！有什么可以帮您？'],
+    '你好': ['👋 你好！随时为您服务~'],
+    'hi': ['👋 Hi！想问什么尽管说'],
+    '谢谢': ['😊 不客气！有问题随时问'],
+    '好': ['😊 很高兴帮到您！'],
+    '棒': ['👍 感谢支持！有问题随时找我'],
+    '再见': ['👋 再见！欢迎下次光临~'],
+    '拜拜': ['👋 拜拜！有需要随时找我'],
 };
+
+function getSmartReply(input) {
+    const lower = input.toLowerCase();
+    let bestMatch = null;
+    let bestScore = 0;
+    
+    const scores = {
+        '套餐': ['套餐', '服务', '方案'],
+        '价格': ['价格', '报价', '收费', '多少', '钱'],
+        '多少钱': ['多少钱', '贵不贵', '便宜'],
+        '做网站': ['做网站', '建站', '网站制作', '开发网站'],
+        '多久': ['多久', '时间', '周期', '几天'],
+        '淘宝': ['淘宝', '便宜', '模板'],
+        '推广': ['推广', '流量', '获客', '竞价'],
+        '小程序': ['小程序', '微信小程序', '支付宝'],
+        'SEO': ['SEO', '排名', '搜索引擎'],
+        '售后': ['售后', '维护', '服务'],
+        '海南': ['海南', '三亚', '本地'],
+        '公司': ['公司', '你们', '流云', '关于'],
+        '联系': ['联系', '微信', '邮箱', '电话', '地址'],
+        '流程': ['流程', '合作', '怎么'],
+        '优势': ['优势', '为什么', '好在哪'],
+        'hello': ['hello', 'hi', '你好', '您好', '在吗'],
+        '谢谢': ['谢谢', '感谢', '好的', '知道了'],
+        '好': ['好', '不错', '可以'],
+        '棒': ['棒', '厉害', '优秀'],
+        '再见': ['再见', '拜拜', 'bye', '走了'],
+    };
+    
+    for (const [key, keywords] of Object.entries(scores)) {
+        let score = 0;
+        for (const kw of keywords) {
+            if (lower.includes(kw)) score++;
+        }
+        if (score > bestScore) {
+            bestScore = score;
+            bestMatch = key;
+        }
+    }
+    
+    if (bestMatch && KNOWLEDGE_BASE[bestMatch]) {
+        const replies = KNOWLEDGE_BASE[bestMatch];
+        return replies[Math.floor(Math.random() * replies.length)];
+    }
+    
+    return '😊 欢迎访问流云智炬！\n💰 价格 | 📦 套餐 | 📞 联系\n直接点击下方按钮或输入问题~';
+}
 
 const chatWidget = document.getElementById('aiChatWidget');
 const chatToggle = document.getElementById('aiChatToggle');
@@ -143,46 +110,14 @@ const chatSend = document.getElementById('chatSend');
 
 function getCurrentTime() {
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    return `${hours}:${minutes}`;
-}
-
-function parseMarkdown(text) {
-    let html = text;
-    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    html = html.replace(/\|(.+)\|/g, (match) => {
-        const cells = match.split('|').filter(c => c.trim());
-        if (cells.every(c => /^[-:]+$/.test(c.trim()))) return '';
-        const row = cells.map(c => `<td>${c.trim()}</td>`).join('');
-        return `<tr>${row}</tr>`;
-    });
-    if (html.includes('<tr>')) {
-        html = html.replace(/(<tr>[\s\S]*?<\/tr>)+/g, '<table class="chat-table">$&</table>');
-    }
-    html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
-    html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul class="chat-list">$&</ul>');
-    html = html.replace(/^(\d)️⃣\s+(.+)$/gm, '<div class="chat-step"><span class="step-num">$1</span><span class="step-text">$2</span></div>');
-    html = html.replace(/\n\n/g, '</p><p>');
-    html = '<p>' + html + '</p>';
-    return html;
+    return String(now.getHours()).padStart(2, '0') + ':' + 
+           String(now.getMinutes()).padStart(2, '0');
 }
 
 function initAIChat() {
     chatSend.addEventListener('click', sendMessage);
     chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-    const minimizeBtn = document.getElementById('chatMinimize');
-    if (minimizeBtn) minimizeBtn.addEventListener('click', toggleAiChat);
     loadChatHistory();
-}
-
-function toggleAiChat() {
-    if (chatWindow.classList.contains('active')) {
-        chatWindow.classList.remove('active');
-    } else {
-        chatWindow.classList.add('active');
-        chatInput.focus();
-    }
 }
 
 function sendMessage() {
@@ -193,25 +128,15 @@ function sendMessage() {
     showTyping();
     setTimeout(() => {
         removeTyping();
-        const response = getAnswer(message);
+        const response = getSmartReply(message);
         addMessage(response, 'ai');
-    }, 600);
-}
-
-function getAnswer(input) {
-    const lowerInput = input.toLowerCase();
-    for (const [keyword, answer] of Object.entries(KNOWLEDGE_BASE)) {
-        if (lowerInput.includes(keyword.toLowerCase())) return answer;
-    }
-    return KNOWLEDGE_BASE['默认'];
+    }, 500);
 }
 
 function addMessage(content, type) {
     const div = document.createElement('div');
     div.className = `message message-${type}`;
-    const time = getCurrentTime();
-    const renderedContent = parseMarkdown(content);
-    div.innerHTML = `<div class="message-content">${renderedContent}</div><div class="message-time">${time}</div>`;
+    div.innerHTML = `<div class="message-content">${content.replace(/\n/g, '<br>')}</div><div class="message-time">${getCurrentTime()}</div>`;
     chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
     saveChatHistory();
@@ -231,31 +156,19 @@ function removeTyping() {
     if (typing) typing.remove();
 }
 
-function clearChat() {
-    chatMessages.innerHTML = '<div class="message message-ai"><div class="message-content">对话已清空。请问有什么可以帮您？</div></div>';
-    localStorage.removeItem('ai-chat-history');
-    chatWindow.classList.remove('active');
-}
-
-function clearChatAndClose() {
-    chatMessages.innerHTML = '<div class="message message-ai"><div class="message-content">对话已清空。请问有什么可以帮您？</div></div>';
-    localStorage.removeItem('ai-chat-history');
-    chatWindow.classList.remove('active');
-}
-
 function saveChatHistory() {
     const messages = [];
-    const messageElements = chatMessages.querySelectorAll('.message');
-    messageElements.forEach(msg => {
+    chatMessages.querySelectorAll('.message').forEach(msg => {
         const contentEl = msg.querySelector('.message-content');
         if (contentEl) {
-            const content = contentEl.innerText || contentEl.textContent;
-            const isUser = msg.classList.contains('message-user');
-            messages.push({ content, type: isUser ? 'user' : 'ai' });
+            messages.push({ 
+                content: contentEl.innerText, 
+                type: msg.classList.contains('message-user') ? 'user' : 'ai' 
+            });
         }
     });
-    const quickReplies = chatMessages.querySelector('.quick-replies');
-    if (quickReplies) quickReplies.remove();
+    const quick = chatMessages.querySelector('.quick-replies');
+    if (quick) quick.remove();
     localStorage.setItem('ai-chat-history', JSON.stringify(messages));
 }
 
@@ -268,42 +181,31 @@ function loadChatHistory() {
             messages.forEach(msg => {
                 const div = document.createElement('div');
                 div.className = `message message-${msg.type}`;
-                const renderedContent = parseMarkdown(msg.content);
-                div.innerHTML = `<div class="message-content">${renderedContent}</div>`;
+                div.innerHTML = `<div class="message-content">${msg.content.replace(/\n/g, '<br>')}</div>`;
                 chatMessages.appendChild(div);
             });
             addQuickReplies();
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        } catch (e) { console.warn('Failed to load chat history:', e); }
+        } catch (e) { addQuickReplies(); }
     } else { addQuickReplies(); }
 }
 
 function addQuickReplies() {
-    const quickReplies = document.createElement('div');
-    quickReplies.className = 'quick-replies';
-    quickReplies.innerHTML = `
+    const quick = document.createElement('div');
+    quick.className = 'quick-replies';
+    quick.innerHTML = `
         <button class="quick-reply-btn" data-question="套餐">📦 套餐</button>
         <button class="quick-reply-btn" data-question="价格">💰 价格</button>
         <button class="quick-reply-btn" data-question="联系">📞 联系</button>
     `;
-    chatMessages.appendChild(quickReplies);
-    quickReplies.querySelectorAll('.quick-reply-btn').forEach(btn => {
+    chatMessages.appendChild(quick);
+    quick.querySelectorAll('.quick-reply-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            const question = btn.getAttribute('data-question');
-            sendQuickReply(question);
+            const q = btn.dataset.question;
+            chatInput.value = q === '套餐' ? '我要了解套餐' : q === '价格' ? '我想了解价格' : '我想联系你们';
+            sendMessage();
         });
     });
-}
-
-function sendQuickReply(question) {
-    let message = '';
-    switch(question) {
-        case '套餐': message = '我想了解套餐'; break;
-        case '价格': message = '我想了解价格'; break;
-        case '联系': message = '我想联系你们'; break;
-    }
-    chatInput.value = message;
-    sendMessage();
 }
 
 document.addEventListener('DOMContentLoaded', initAIChat);
