@@ -236,6 +236,11 @@ function clearChat() {
     localStorage.removeItem('ai-chat-history');
 }
 
+function clearChatAndClose() {
+    clearChat();
+    toggleAiChat();
+}
+
 function saveChatHistory() {
     const messages = [];
     const messageElements = chatMessages.querySelectorAll('.message');
