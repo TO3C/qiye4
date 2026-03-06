@@ -6,6 +6,7 @@
     <title>流云智炬 | 海南自贸港企业数字化服务</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -256,11 +257,11 @@
                         <p>AI客服24小时在线</p>
                     </div>
                     
-                    <div class="cta-card cta-highlight">
+                    <div class="cta-card cta-highlight" onclick="window.location.href='tel:296077990'">
                         <div class="cta-icon">📞</div>
                         <h3>电话咨询</h3>
                         <p>工作日 9:00-18:00</p>
-                        <div class="cta-phone">点击咨询</div>
+                        <div class="cta-phone">296077990</div>
                     </div>
                     
                     <div class="cta-card">
@@ -332,7 +333,10 @@
         <div class="ai-chat-window" id="aiChatWindow">
             <div class="chat-header">
                 <div class="chat-title">流云智炬 智能顾问</div>
-                <button class="chat-clear" onclick="clearChat()">✕</button>
+                <div class="chat-header-actions">
+                    <button class="chat-minimize" id="chatMinimize" onclick="toggleAiChat()">−</button>
+                    <button class="chat-clear" onclick="clearChat()">✕</button>
+                </div>
             </div>
             
             <div class="chat-messages" id="chatMessages">

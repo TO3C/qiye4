@@ -1,8 +1,3 @@
-/**
- * 流云智炬 AI Chat Widget
- * 基于关键词匹配的知识库问答系统
- */
-
 const KNOWLEDGE_BASE = {
     '套餐': `🎯 **服务套餐**
 
@@ -156,8 +151,63 @@ const KNOWLEDGE_BASE = {
 💬 在线咨询：直接对话即可
 📞 电话咨询：工作日 9:00-18:00
 📍 地址：海南省三亚市
+📧 邮箱：296077990@qq.com
 
 期待为您服务！`,
+
+    '流程': `🔄 **合作流程**
+
+1️⃣ **需求沟通**
+- 了解项目需求
+- 初步方案设计
+- 预算评估
+
+2️⃣ **合同签订**
+- 确定项目范围
+- 明确交付时间
+- 签订正式合同
+
+3️⃣ **设计开发**
+- UI/UX 设计
+- 前端开发
+- 后端集成
+
+4️⃣ **测试上线**
+- 功能测试
+- 性能优化
+- 正式上线
+
+5️⃣ **售后支持**
+- 免费维护期
+- 持续技术支持
+- 定期更新迭代`,
+
+    '优势': `⭐ **为什么选择我们**
+
+🚀 **高效交付**
+- 快速响应
+- 准时交付
+- 敏捷开发
+
+💎 **品质保证**
+- 代码规范
+- 严格测试
+- 性能优化
+
+🤝 **贴心服务**
+- 1对1专属客服
+- 定期进度汇报
+- 终身技术支持
+
+💰 **合理价格**
+- 透明定价
+- 性价比高
+- 免费维护期
+
+🌟 **持续创新**
+- 最新技术栈
+- 持续学习改进
+- 行业最佳实践`,
 
     'hello': `👋 您好！欢迎访问流云智炬！
 
@@ -167,6 +217,7 @@ const KNOWLEDGE_BASE = {
 - 小程序开发
 - SEO优化
 - 售后服务
+- 合作流程
 
 请问有什么可以帮您？`,
     
@@ -178,6 +229,7 @@ const KNOWLEDGE_BASE = {
 - 小程序开发
 - SEO优化
 - 售后服务
+- 合作流程
 
 请问有什么可以帮您？`,
 
@@ -197,12 +249,10 @@ const KNOWLEDGE_BASE = {
 - 📱 小程序开发
 - 🔍 SEO优化
 - 🛡️ 售后服务
+- 🔄 合作流程
+- ⭐ 为什么选择我们
 
-请直接输入您的问题，比如：
-"套餐有哪些？"
-"做一个网站多少钱？"
-"你们负责推广吗？"
-"海南本地有公司吗？"`
+请直接输入您的问题，或者点击下方快捷按钮~`
 };
 
 const chatWidget = document.getElementById('aiChatWidget');
@@ -212,9 +262,54 @@ const chatMessages = document.getElementById('chatMessages');
 const chatInput = document.getElementById('chatInput');
 const chatSend = document.getElementById('chatSend');
 
+function getCurrentTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${hours}:${minutes}`;
+}
+
+function parseMarkdown(text) {
+    let html = text;
+    
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    
+    html = html.replace(/\|(.+)\|/g, (match) => {
+        const cells = match.split('|').filter(c => c.trim());
+        if (cells.every(c => /^[-:]+$/.test(c.trim()))) {
+            return '';
+        }
+        const row = cells.map(c => `<td>${c.trim()}</td>`).join('');
+        return `<tr>${row}</tr>`;
+    });
+    
+    if (html.includes('<tr>')) {
+        html = html.replace(/(<tr>[\s\S]*?<\/tr>)+/g, '<table class="chat-table">$&</table>');
+    }
+    
+    html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+    html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul class="chat-list">$&</ul>');
+    
+    html = html.replace(/^(\d)️⃣\s+(.+)$/gm, '<div class="chat-step"><span class="step-num">$1</span><span class="step-text">$2</span></div>');
+    
+    html = html.replace(/✅|❓|💰|🌐|📱|🔍|🛡️|📍|🏢|👋|😊|👎|👍/g, '<span class="emoji">$&</span>');
+    
+    html = html.replace(/\n\n/g, '</p><p>');
+    html = '<p>' + html + '</p>';
+    
+    return html;
+}
+
 function initAIChat() {
     chatSend.addEventListener('click', sendMessage);
     chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+    
+    const minimizeBtn = document.getElementById('chatMinimize');
+    if (minimizeBtn) {
+        minimizeBtn.addEventListener('click', toggleAiChat);
+    }
+    
+    loadChatHistory();
 }
 
 function toggleAiChat() {
@@ -253,18 +348,25 @@ function getAnswer(input) {
 
 function addMessage(content, type) {
     const div = document.createElement('div');
-    div.className = 'message';
-    div.innerHTML = '<div class="message-content">' + content + '</div>';
+    div.className = `message message-${type}`;
+    
+    const time = getCurrentTime();
+    const renderedContent = parseMarkdown(content);
+    
+    div.innerHTML = `<div class="message-content">${renderedContent}</div><div class="message-time">${time}</div>`;
     chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+    saveChatHistory();
 }
 
 function showTyping() {
     const div = document.createElement('div');
     div.id = 'typing';
-    div.className = 'message';
-    div.innerHTML = '<div class="message-content">正在输入...</div>';
+    div.className = 'message message-ai';
+    div.innerHTML = '<div class="message-content typing"><span></span><span></span><span></span></div>';
     chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 function removeTyping() {
@@ -273,7 +375,85 @@ function removeTyping() {
 }
 
 function clearChat() {
-    chatMessages.innerHTML = '<div class="message"><div class="message-content">对话已清空。请问有什么可以帮您？</div></div>';
+    chatMessages.innerHTML = '<div class="message message-ai"><div class="message-content">对话已清空。请问有什么可以帮您？</div></div>';
+    localStorage.removeItem('ai-chat-history');
+}
+
+function saveChatHistory() {
+    const messages = [];
+    const messageElements = chatMessages.querySelectorAll('.message');
+    messageElements.forEach(msg => {
+        const contentEl = msg.querySelector('.message-content');
+        if (contentEl) {
+            const content = contentEl.innerText || contentEl.textContent;
+            const isUser = msg.classList.contains('message-user');
+            messages.push({ content, type: isUser ? 'user' : 'ai' });
+        }
+    });
+    
+    const quickReplies = chatMessages.querySelector('.quick-replies');
+    if (quickReplies) {
+        quickReplies.remove();
+    }
+    
+    localStorage.setItem('ai-chat-history', JSON.stringify(messages));
+}
+
+function loadChatHistory() {
+    const saved = localStorage.getItem('ai-chat-history');
+    if (saved) {
+        try {
+            const messages = JSON.parse(saved);
+            chatMessages.innerHTML = '';
+            
+            messages.forEach(msg => {
+                const div = document.createElement('div');
+                div.className = `message message-${msg.type}`;
+                const renderedContent = parseMarkdown(msg.content);
+                div.innerHTML = `<div class="message-content">${renderedContent}</div>`;
+                chatMessages.appendChild(div);
+            });
+            
+            addQuickReplies();
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        } catch (e) {
+            console.warn('Failed to load chat history:', e);
+        }
+    } else {
+        addQuickReplies();
+    }
+}
+
+function addQuickReplies() {
+    const quickReplies = document.createElement('div');
+    quickReplies.className = 'quick-replies';
+    quickReplies.innerHTML = `
+        <button class="quick-reply-btn" data-question="套餐">📦 服务套餐</button>
+        <button class="quick-reply-btn" data-question="价格">💰 咨询价格</button>
+        <button class="quick-reply-btn" data-question="流程">🔄 合作流程</button>
+        <button class="quick-reply-btn" data-question="优势">⭐ 为什么选我们</button>
+    `;
+    
+    chatMessages.appendChild(quickReplies);
+    
+    quickReplies.querySelectorAll('.quick-reply-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const question = btn.getAttribute('data-question');
+            sendQuickReply(question);
+        });
+    });
+}
+
+function sendQuickReply(question) {
+    let message = '';
+    switch(question) {
+        case '套餐': message = '我想了解服务套餐'; break;
+        case '价格': message = '我想咨询价格'; break;
+        case '流程': message = '我想了解合作流程'; break;
+        case '优势': message = '为什么选择你们'; break;
+    }
+    chatInput.value = message;
+    sendMessage();
 }
 
 document.addEventListener('DOMContentLoaded', initAIChat);
