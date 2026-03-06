@@ -234,11 +234,13 @@ function removeTyping() {
 function clearChat() {
     chatMessages.innerHTML = '<div class="message message-ai"><div class="message-content">对话已清空。请问有什么可以帮您？</div></div>';
     localStorage.removeItem('ai-chat-history');
+    chatWindow.classList.remove('active');
 }
 
 function clearChatAndClose() {
-    clearChat();
-    toggleAiChat();
+    chatMessages.innerHTML = '<div class="message message-ai"><div class="message-content">对话已清空。请问有什么可以帮您？</div></div>';
+    localStorage.removeItem('ai-chat-history');
+    chatWindow.classList.remove('active');
 }
 
 function saveChatHistory() {
